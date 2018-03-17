@@ -1,7 +1,31 @@
-<p>
-  {{nom}}
+<div>
+  {{nom}}  ---> String interpolation
   <br>
-  <input [type]='typeInput' (input)="afficherInput($event.target.value)">
+  <input [type]='typeInput' (input)="afficherInput($event.target.value)">    ---> Liason de proprieté + événement
   <br>
+
+   {{status}}
+
+  <p *ngIf='status'>
+    {{p1}}
+  </p>
+
+  <p *ngIf='!status'>
+    {{p2}}
+  </p>
+
+  <button on-click="controlerStatus()"
+        style="background-color: darkred;
+        height: 100px;
+        width: 200px">
+    Directive button !
+  </button>
   directive works !
-</p>
+
+  <ul>
+    <li *ngFor="let item of texts; let i = index">
+      {{i}} {{item}}
+    </li>
+  </ul>
+
+</div>
